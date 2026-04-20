@@ -1,0 +1,23 @@
+# ──────────────────────────────────────────────────────
+# docker-compose.yml — 로컬 개발용
+# ──────────────────────────────────────────────────────
+services:
+  streamlit:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: blackbankruptcy-app
+    ports:
+      - "8501:8501"
+    volumes:
+      # 데이터 폴더만 마운트 (코드 수정 즉시 반영 X → 개발 시 rebuild 필요)
+      - ./data:/app/data:ro
+    environment:
+      - PYTHONPATH=/app
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8501/_stcore/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s

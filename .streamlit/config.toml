@@ -1,0 +1,24 @@
+[server]
+# 외부 접속 허용
+headless = true
+address = "0.0.0.0"
+port = 8501
+
+# CORS 설정 (Nginx가 앞단에 있으므로 비활성화)
+enableCORS = false
+enableXsrfProtection = false
+
+# 파일 업로드 최대 크기 (MB)
+maxUploadSize = 50
+
+[browser]
+# 사용 통계 비활성화
+gatherUsageStats = false
+
+[theme]
+base = "dark"
+primaryColor = "#00C896"
+backgroundColor = "#0d1117"
+secondaryBackgroundColor = "#0f1923"
+textColor = "#e2e8f0"
+font = "sans serif"

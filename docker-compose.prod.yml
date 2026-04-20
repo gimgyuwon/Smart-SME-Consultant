@@ -1,0 +1,68 @@
+# ──────────────────────────────────────────────────────
+# docker-compose.prod.yml — AWS EC2 프로덕션 배포용
+# 사용법: docker compose -f docker-compose.prod.yml up -d
+# ──────────────────────────────────────────────────────
+services:
+  # ── Streamlit 앱 ────────────────────────────────────
+  streamlit:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: blackbankruptcy-app
+    # 프로덕션에서는 Nginx가 앞단에 있으므로 외부 포트 노출 안 함
+    expose:
+      - "8501"
+    volumes:
+      - ./data:/app/data:ro
+    environment:
+      - PYTHONPATH=/app
+      - ENV=production
+    restart: always
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8501/_stcore/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+    networks:
+      - app-network
+
+  # ── Nginx 리버스 프록시 ──────────────────────────────
+  nginx:
+    image: nginx:1.25-alpine
+    container_name: blackbankruptcy-nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./deploy/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      # SSL 인증서 (Let's Encrypt 사용 시)
+      - ./deploy/certbot/conf:/etc/letsencrypt:ro
+      - ./deploy/certbot/www:/var/www/certbot:ro
+    depends_on:
+      streamlit:
+        condition: service_healthy
+    restart: always
+    networks:
+      - app-network
+
+  # ── Certbot (HTTPS 자동 갱신) ───────────────────────
+  certbot:
+    image: certbot/certbot:latest
+    container_name: blackbankruptcy-certbot
+    volumes:
+      - ./deploy/certbot/conf:/etc/letsencrypt
+      - ./deploy/certbot/www:/var/www/certbot
+    # 12시간마다 인증서 갱신 체크
+    entrypoint: >
+      /bin/sh -c "trap exit TERM;
+      while :; do
+        certbot renew --webroot -w /var/www/certbot --quiet;
+        sleep 12h & wait $${!};
+      done;"
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

@@ -1,6 +1,6 @@
 # 🛡️ 소상공인 흑자도산 방지 대시보드
 
-> **Official Service**: [https://smecheck.cloud](https://smecheck.cloud)  
+> **Official Service**: [http://smecheck.cloud](http://smecheck.cloud)  
 > **AI 기반 현금흐름 진단 솔루션** — 데이터 기반의 흑자도산 리스크 관리 및 정책자금 최적 매칭 대시보드입니다.
 
 ---

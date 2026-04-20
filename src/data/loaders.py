@@ -1,7 +1,5 @@
 """
-src/data/loaders.py — 파일 I/O 계층
-JSON 및 CSV 데이터 로드를 담당합니다.
-비즈니스 로직·UI 코드는 포함하지 않습니다.
+src/data/loaders.py
 """
 from __future__ import annotations
 

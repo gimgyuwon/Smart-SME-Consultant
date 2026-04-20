@@ -1,6 +1,5 @@
 """
-src/data/semas_api.py — SEMAS(소상공인시장진흥공단) API 계층
-HTTP 통신만 담당하며, UI·비즈니스 로직은 포함하지 않습니다.
+src/data/semas_api.py
 """
 from __future__ import annotations
 

@@ -1,6 +1,5 @@
 """
-src/ui/styles.py — 글로벌 CSS 스타일
-앱 전체에 적용되는 다크 테마 CSS를 관리합니다.
+src/ui/styles.py
 """
 import streamlit as st
 

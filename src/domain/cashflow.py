@@ -1,7 +1,5 @@
 """
-src/domain/cashflow.py — 현금흐름 예측 비즈니스 로직
-Prophet 기반 예측 파이프라인을 담당합니다.
-Streamlit 의존성이 없는 순수 Python 함수로 구성됩니다.
+src/domain/cashflow.py
 """
 from __future__ import annotations
 

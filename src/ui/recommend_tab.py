@@ -1,6 +1,5 @@
 """
-src/ui/recommend_tab.py — 탭3 정책자금 추천 UI
-도메인 로직은 src.domain.recommend에, API 호출은 src.data.semas_api에 위임합니다.
+src/ui/recommend_tab.py
 """
 from __future__ import annotations
 

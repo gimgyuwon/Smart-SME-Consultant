@@ -1,7 +1,4 @@
-# ─────────────────────────────────────────────────
-# Stage 1: 의존성 설치 (캐시 레이어 분리)
-# python:3.11-slim-bookworm = Debian 12 (stable) 명시
-# ─────────────────────────────────────────────────
+# Build Stage
 FROM python:3.11-slim-bookworm AS builder
 
 WORKDIR /install
@@ -18,9 +15,7 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir --prefix=/install/deps -r requirements.txt
 
 
-# ─────────────────────────────────────────────────
-# Stage 2: 실행 이미지 (최소 크기)
-# ─────────────────────────────────────────────────
+# Runtime Stage
 FROM python:3.11-slim-bookworm AS runtime
 
 RUN apt-get update --fix-missing && apt-get install -y --no-install-recommends \

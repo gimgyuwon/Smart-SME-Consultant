@@ -1,6 +1,5 @@
 """
-src/ui/cashflow_tab.py — 탭1 현금흐름 예측 UI
-도메인 로직은 src.domain.cashflow에, 데이터 로드는 src.data.loaders에 위임합니다.
+src/ui/cashflow_tab.py
 """
 from __future__ import annotations
 

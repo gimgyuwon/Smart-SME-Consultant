@@ -1,7 +1,4 @@
-# ──────────────────────────────────────────────────────
-# docker-compose.prod.yml — AWS EC2 프로덕션 배포용
-# 사용법: docker compose -f docker-compose.prod.yml up -d
-# ──────────────────────────────────────────────────────
+# Production deployment
 services:
   # ── Streamlit 앱 ────────────────────────────────────
   streamlit:

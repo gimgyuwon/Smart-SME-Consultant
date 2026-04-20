@@ -1,6 +1,5 @@
 """
-src/ui/sidebar.py — 사이드바 컴포넌트
-앱 설명, 서비스 안내, 면책 조항을 렌더링합니다.
+src/ui/sidebar.py
 """
 import streamlit as st
 

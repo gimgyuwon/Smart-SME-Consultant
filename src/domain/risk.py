@@ -1,7 +1,5 @@
 """
-src/domain/risk.py — 흑자도산 위험도 진단 비즈니스 로직
-매출채권 회전율 기반 위험도 계산을 담당합니다.
-Streamlit 의존성이 없는 순수 Python 함수로 구성됩니다.
+src/domain/risk.py
 """
 from __future__ import annotations
 

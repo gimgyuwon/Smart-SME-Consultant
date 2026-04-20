@@ -1,7 +1,5 @@
 """
-src/domain/recommend.py — 정책자금 추천 비즈니스 로직
-KoNLPy + Gensim LDA 기반 토픽 모델링을 담당합니다.
-Streamlit 의존성이 없는 순수 Python 함수로 구성됩니다.
+src/domain/recommend.py
 """
 from __future__ import annotations
 

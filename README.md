@@ -1,11 +1,7 @@
-# 🛡️ 소상공인 흑자도산 방지 대시보드 (Smart-SME-Consultant)
+# 🛡️ 소상공인 흑자도산 방지 대시보드
 
-> **흑자도산(Black Bankruptcy) 방지 솔루션**  
-> 매출은 발생하지만 현금이 부족해 도산하는 위기를 AI(Prophet)와 데이터 분석(LDA)으로 사전에 방지합니다.
-
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://smart-sme-consultant.streamlit.app/)
-[![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=flat&logo=docker&logoColor=white)](https://www.docker.com/)
-[![AWS](https://img.shields.io/badge/AWS-%23FF9900.svg?style=flat&logo=amazon-aws&logoColor=white)](https://aws.amazon.com/)
+> **Official Service**: [https://smecheck.cloud](https://smecheck.cloud)  
+> **AI 기반 현금흐름 진단 솔루션** — 데이터 기반의 흑자도산 리스크 관리 및 정책자금 최적 매칭 대시보드입니다.
 
 ---
 
